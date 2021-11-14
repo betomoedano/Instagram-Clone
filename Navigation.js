@@ -9,6 +9,7 @@ import ProfileScreen from './screens/ProfileScreen'
 import ReelsScreen from "./screens/ReelsScreen";
 import ShopScreen from "./screens/ShopScreen";
 import ProfileHeader from "./Components/ProfileHeader";
+import HeaderHome from "./Components/HeaderHome";
 
 const Tab = createBottomTabNavigator();
 
@@ -35,7 +36,10 @@ export default function Navigation() {
                     tabBarShowLabel: false
                 })}
             >
-                <Tab.Screen name="Home" component={HomeScreen} />
+                <Tab.Screen name="Home" component={HomeScreen}
+                options={{
+                    headerTitle: () => <HeaderHome/>
+                }} />
                 <Tab.Screen name="Search" component={SearchScreen} />
                 <Tab.Screen name="Reels" component={ReelsScreen} />
                 <Tab.Screen name="Shop" component={ShopScreen} />

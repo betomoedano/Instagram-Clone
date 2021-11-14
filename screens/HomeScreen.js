@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from "react";
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from '../redux/slices/userSlice';
+import StoryComponent from '../Components/StoryComponent';
+import PostListHome from "../Components/PostListHome";
 
 export default function HomeScreen() {
 
@@ -26,10 +28,9 @@ export default function HomeScreen() {
   }
 
   return (
-    <View>
-      <Text>HomeScreen</Text>
-      <Text>{user.username}</Text>
-      <Text>{user.profilePicture}</Text>
-    </View>
+    <ScrollView style={{backgroundColor: '#fff', flex: 1}}>
+      <StoryComponent />
+      <PostListHome />
+    </ScrollView>
   );
 }
